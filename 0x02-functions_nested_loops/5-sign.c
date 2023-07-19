@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h" 
 /**
  * print_sign - prints the sign of the given number +/-
  * @n: Number to be tested
@@ -23,6 +23,4 @@ int print_sign(int n)
 		_putchar('0');
 		return (0);
 	}
-}
-
 }
