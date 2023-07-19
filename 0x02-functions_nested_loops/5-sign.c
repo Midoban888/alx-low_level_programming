@@ -1,4 +1,4 @@
-#include "main.h" 
+#include "main.h"
 /**
  * print_sign - prints the sign of the given number +/-
  * @n: Number to be tested
