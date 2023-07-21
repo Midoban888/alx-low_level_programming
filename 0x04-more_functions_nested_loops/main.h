@@ -2,5 +2,6 @@
 #define main_h
 #include <stdio.h>
 
-int _putchar(char);
+int _putchar(char c);
 int _isupper(int c);
+#endif
