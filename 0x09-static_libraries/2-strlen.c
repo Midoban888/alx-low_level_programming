@@ -1,18 +1,18 @@
-#include "main.h"
+#include"main.h"
+
 /**
- * _strlen - returns the length of a string
- * @s: string
- * Return: length
+ *_strlen - check the code len
+ *@s: pointer *s that we increment to be able to increment the value of len
+ * Return: len
  */
 int _strlen(char *s)
 {
-	int longi = 0;
+	int len = 0;
 
 	while (*s != '\0')
 	{
-		longi++;
-		s++;
+		++len;
+		++s;
 	}
-
-	return (longi);
+	return (len);
 }
