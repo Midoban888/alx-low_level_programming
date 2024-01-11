@@ -1,50 +1,30 @@
-#include "lists.h"
+#include <stdio.h>
+#include<stdlib.h>
 
 /**
- * delete_dnodeint_at_index - function that deletes the node at index of a,
- * linked list.
- * @head: pointer to pointer to the h of linked list.
- * @index: ndex of the node that should be deleted. Index starts at 0.
+ * struct dlistint_s - doubly linked list
+ * @n: integer
+ * @prev: points to the previous node
+ * @next: points to the next node
  *
- * Return: if it succeeded, -1 if it failed
+ * Description: doubly linked list node structure
+ *
  */
-
-int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
+typedef struct dlistint_s
 {
-	dlistint_t *head1;
-	dlistint_t *head2;
-	unsigned int count;
+	int n;
+	struct dlistint_s *prev;
+	struct dlistint_s *next;
+} dlistint_t;
 
-	head1 = *head;
+size_t print_dlistint(const dlistint_t *h);
+size_t dlistint_len(const dlistint_t *h);
+dlistint_t *add_dnodeint(dlistint_t **head, const int n);
+dlistint_t *add_dnodeint_end(dlistint_t **head, const int n);
+void free_dlistint(dlistint_t *head);
+dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index);
+dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n);
+int delete_dnodeint_at_index(dlistint_t **head, unsigned int index);
+int sum_dlistint(dlistint_t *head);
 
-	if (head1 != NULL)
-		while (head1->prev != NULL)
-			head1 = head1->prev;
-	count = 0;
-
-	while (head1 != NULL)
-	{
-		if (count == index)
-		{
-			if (count == 0)
-			{
-				*head = head1->next;
-				if (*head != NULL)
-					(*head)->prev = NULL;
-			}
-			else
-			{
-				head2->next = head1->next;
-
-				if (head1->next != NULL)
-					head1->next->prev = head2;
-			}
-			free(head1);
-			return (1);
-		}
-		head2 = head1;
-		head1 = head1->next;
-		count++;
-	}
-	return (-1);
-}
+#endif
